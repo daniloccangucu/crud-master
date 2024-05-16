@@ -3,10 +3,11 @@
 
 ### Task 2: Developing the Inventory API
 - OK: Set up Vagrant for VMs: 1 hour
-- Configure PostgreSQL and RabbitMQ: 1 hour
-- Define the API endpoints and their functionalities: 1 hour
-- Set up the PostgreSQL database for the Inventory API: 1 hour
-- Implement the Inventory API using Express and Sequelize: 4 hours
+- OK: Configure PostgreSQL: 1 hour
+- OK: Basic node server
+- OK: Set up the PostgreSQL database for the Inventory API: 1 hour
+- OK: API /GET with Express
+- Sequelize?
 - Test the Inventory API using Postman: 2 hours
 
 ### Task 3: Developing the Billing API
