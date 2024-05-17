@@ -6,9 +6,8 @@
 - OK: Configure PostgreSQL: 1 hour
 - OK: Basic node server
 - OK: Set up the PostgreSQL database for the Inventory API: 1 hour
-- OK: API /GET with Express
-- Sequelize?
-- Test the Inventory API using Postman: 2 hours
+- OK: Inventory API with Express + Sequelize
+- OK: Test the Inventory API using Postman: 2 hours
 
 ### Task 3: Developing the Billing API
 - Set up Vagrant for VMs: 1 hour
