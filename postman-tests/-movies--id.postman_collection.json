@@ -27,10 +27,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{api-gateway-url}}/api/movies/:id",
+					"raw": "http://localhost:3000/api/movies/:id",
+					"protocol": "http",
 					"host": [
-						"{{api-gateway-url}}"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"api",
 						"movies",
@@ -77,10 +79,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{api-gateway-url}}/api/movies/:id",
+					"raw": "http://localhost:3000/api/movies/:id",
+					"protocol": "http",
 					"host": [
-						"{{api-gateway-url}}"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"api",
 						"movies",
@@ -127,10 +131,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{api-gateway-url}}/api/movies/:id",
+					"raw": "http://localhost:3000/api/movies/:id",
+					"protocol": "http",
 					"host": [
-						"{{api-gateway-url}}"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"api",
 						"movies",
