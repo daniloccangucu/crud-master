@@ -60,7 +60,7 @@
 						}
 					}
 				},
-				"url": "{{inventory_base_url}}",
+				"url": "{{api-gateway-url}}/api/movies",
 				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
 			},
 			"response": []
@@ -94,7 +94,7 @@
 						}
 					}
 				},
-				"url": "{{inventory_base_url}}",
+				"url": "{{api-gateway-url}}/api/movies",
 				"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
 			},
 			"response": []
@@ -132,6 +132,10 @@
 		{
 			"key": "inventory_base_url",
 			"value": "http://localhost:8080/movies"
+		},
+		{
+			"key": "api-gateway-url",
+			"value": "http://localhost:5000"
 		}
 	]
 }
