@@ -8,6 +8,9 @@ sudo apt-get install -y rabbitmq-server
 sudo systemctl start rabbitmq-server
 sudo systemctl enable rabbitmq-server
 
+sudo rabbitmq-plugins enable rabbitmq_management
+sudo systemctl restart rabbitmq-server
+
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install -y npm
@@ -21,10 +24,14 @@ set -o allexport
 source .env
 set +o allexport
 
+sudo rabbitmqctl add_user $RABBITMQ_USER $RABBITMQ_USER_PWD
+sudo rabbitmqctl set_user_tags $RABBITMQ_USER administrator
+sudo rabbitmqctl set_permissions -p / $RABBITMQ_USER ".*" ".*" ".*"
+
 npm install
 
 sudo -u postgres psql -f setup.sql
 echo "ALTER USER postgres WITH PASSWORD '$PGPASSWORD';" > change_password.sql
 sudo -u postgres psql -f change_password.sql
 
-# pm2 start ./src/server.js --name billing-api
+pm2 start ./src/server.js --name billing-api
