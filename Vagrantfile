@@ -18,7 +18,9 @@ end
 config.vm.define "billing-vm" do |billing|
   billing.vm.box = "ubuntu/bionic64"
   billing.vm.network "private_network", ip: "192.168.33.11"
-  billing.vm.network "forwarded_port", guest: 5001, host: 5001
+  billing.vm.network "forwarded_port", guest: 3001, host: 3001
+  billing.vm.network "forwarded_port", guest: 5672, host: 5672
+  billing.vm.network "forwarded_port", guest: 15672, host: 15672
   billing.vm.hostname = "billing-vm"
 
   billing.vm.provision "shell", inline: <<-SHELL
@@ -27,5 +29,20 @@ config.vm.define "billing-vm" do |billing|
     SHELL
 
   billing.vm.provision "shell", path: "scripts/provision_billing.sh"
+end
+
+# Config for api-gateway-vm
+config.vm.define "api-gateway-vm" do |gateway|
+  gateway.vm.box = "ubuntu/bionic64"
+  gateway.vm.network "private_network", ip: "192.168.33.12"
+  gateway.vm.network "forwarded_port", guest: 3000, host: 3000
+  gateway.vm.hostname = "api-gateway-vm"
+
+  gateway.vm.provision "shell", inline: <<-SHELL
+    mkdir -p /home/vagrant/dotenv
+    cp /vagrant/.env /home/vagrant/dotenv/.env
+  SHELL
+
+  gateway.vm.provision "shell", path: "scripts/provision_api-gateway.sh"
 end
 end
