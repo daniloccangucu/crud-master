@@ -30,8 +30,8 @@ sudo rabbitmqctl set_permissions -p / $RABBITMQ_USER ".*" ".*" ".*"
 
 npm install
 
-sudo -u postgres psql -f setup.sql
+sudo -u postgres psql -f src/setup.sql
 echo "ALTER USER postgres WITH PASSWORD '$PGPASSWORD';" > change_password.sql
 sudo -u postgres psql -f change_password.sql
 
-pm2 start ./src/server.js --name billing-api
+pm2 start ./src/server.js --name billing_app

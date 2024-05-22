@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
-  # Config for iventory-vm
-  config.vm.define "invetory-vm" do |inventory|
+  # Config for inventory-vm
+  config.vm.define "inventory-vm" do |inventory|
     inventory.vm.box = "ubuntu/bionic64"
     inventory.vm.network "private_network", ip: "192.168.33.10"
     inventory.vm.network "forwarded_port", guest: 8080, host: 8080
