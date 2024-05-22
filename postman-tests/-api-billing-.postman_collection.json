@@ -28,14 +28,14 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"user_id\": \"30\",\n  \"number_of_items\": \"10\",\n  \"total_amount\": \"50\"\n}\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
+          "mode": "raw",
+          "raw": "{\n  \"user_id\": \"20\",\n  \"number_of_items\": \"99\",\n  \"total_amount\": \"250\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
 				"url": "http://localhost:3000/api/billing",
 				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
 			},
